@@ -11,11 +11,11 @@ Description: The library uses the SPI library from Arduino (internally called) t
 Usage: 
 
 1. Declare a pin from the uC connected to the CS pin of the sensor --> SS_Pin
-2. Instantiate as many devices as you have connected using # LM95071 # device(SS_Pin). 
-3. Initialize the library with the *begin()* method --> device.begin();
+2. Instantiate as many devices as you have connected using **LM95071** device(SS_Pin). 
+3. Initialize the library with the **begin()** method --> device.begin();
 4. The result from the conservion is saved in a *float* variable.
 
 Notes:
 
 a. Debugging is possible via the serial port to observe the raw conversion of data. The second parameter of the object declaration defines if it is needed or not.
-    If debugging is needed use: # DEBUG_ON # otherwise leave the second parameter blank or use # DEBUG_OFF #
+    If debugging is needed use: # DEBUG_ON # otherwise leave the second parameter blank or use **DEBUG_OFF**
