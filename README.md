@@ -12,8 +12,8 @@ Usage:
 
 1. Declare a pin from the uC connected to the CS pin of the sensor --> SS_Pin
 2. Instantiate as many devices as you have connected using **LM95071** device(SS_Pin). 
-3. Initialize the library with the **begin()** method --> device.begin();
-4. The result from the conservion is saved in a *float* variable.
+3. Initialize the library with the device.**begin()** method --> device.begin();
+4. Query the value using the method device.**getTemperature()** The result from the conservion is saved in a *float* variable.
 
 Notes:
 
