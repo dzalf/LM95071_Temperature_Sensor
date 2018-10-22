@@ -1,4 +1,4 @@
-# LM95071-TI-Temperature-Sensor
+# LM95071 Texas Instruments Temperature Sensor
 
 Arduino/Teensy Library for reading temperatures from the SPI Temperature Sensor from TI
 
