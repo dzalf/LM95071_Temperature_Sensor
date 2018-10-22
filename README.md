@@ -23,6 +23,6 @@ a. Debugging is possible via the serial port to observe the raw conversion of da
 
 If you find any issues with the implementation please let me know
 
-Cheers!
+Cheers!  :beer:
 
-dzalf ::beer::
+dzalf
