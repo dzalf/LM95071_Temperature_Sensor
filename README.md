@@ -1,6 +1,6 @@
 # LM95071 Texas Instruments Temperature Sensor
 
-Arduino/Teensy Library for reading temperatures from the SPI Temperature Sensor from TI
+Arduino*/Teensy** Library for reading temperatures from the SPI Temperature Sensor from TI
 
 The Sensor comes in a SOT-23 package and requires three Pins from the uC board (Arduino/Teensy)
 
@@ -26,3 +26,7 @@ If you find any issues with the implementation please let me know
 Cheers!  :beer:
 
 dzalf
+
+* Tested on Arduino Pro Micro and Leonardo. On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this)
+
+** Tested on Teeensy 3.2. No wiring problem since all pins are available thanks to [Paul's](https://www.pjrc.com/teensy/) great design :sunglasses:
