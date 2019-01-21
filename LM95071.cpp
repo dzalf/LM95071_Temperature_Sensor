@@ -25,7 +25,7 @@ float LM95071::getTemperature(void) {
 	
 	if (_debug) {
 		Serial.print("Current temp = ");
-		Serial.println(temperature);
+		Serial.println(final);
 		Serial.print(char(194));
 		Serial.println("C");
 	}
