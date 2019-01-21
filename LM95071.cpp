@@ -1,8 +1,5 @@
 #include "LM95071.h"
 
-
-
-
 // Constructor
 
 LM95071::LM95071(uint8_t pin, boolean debug) {
@@ -13,9 +10,11 @@ LM95071::LM95071(uint8_t pin, boolean debug) {
 }
 
 void LM95071::begin(void) {
+	
   SPI.begin();
   pinMode(_SelDev_Pin, OUTPUT);
   digitalWrite(_SelDev_Pin, HIGH);
+  
 }
 
 float LM95071::getTemperature(void) {
@@ -23,11 +22,20 @@ float LM95071::getTemperature(void) {
   float final;
   _tempHex = readTemp(BYTES_TO_READ);
   final = celsiusConversion(_tempHex);
-
+	
+	if (_debug) {
+		Serial.print("Current temp = ");
+		Serial.println(final);
+		Serial.print(char(194));
+		Serial.println("C");
+	}
+	
   return final;
-
+  
 }
+
 short LM95071::readTemp(int bytesToRead) {
+  
   byte inByte = 0;
   short result;
 
@@ -37,10 +45,11 @@ short LM95071::readTemp(int bytesToRead) {
   result = SPI.transfer(CONTINUOUS_CONV);
   bytesToRead--;
 
-
   if (_debug) {
+	  
     Serial.print("1st byte = ");
     Serial.println(result, HEX);
+	
   }
   if (bytesToRead > 0) {
 
@@ -56,6 +65,7 @@ short LM95071::readTemp(int bytesToRead) {
     bytesToRead--;
 
   }
+  
   SPI.endTransaction();
 
   digitalWrite(_SelDev_Pin, HIGH);
@@ -74,6 +84,7 @@ float LM95071::celsiusConversion(short val) {
   result = shifted * RESOLUTION;
 
   if (_debug) {
+	  
     Serial.print("Hex value = ");
     Serial.print(_tempHex, HEX);
     Serial.print(" ;");
@@ -86,6 +97,4 @@ float LM95071::celsiusConversion(short val) {
   }
 
   return result;
-
-
 }
