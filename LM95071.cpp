@@ -23,13 +23,6 @@ float LM95071::getTemperature(void) {
   _tempHex = readTemp(BYTES_TO_READ);
   final = celsiusConversion(_tempHex);
 	
-	if (_debug) {
-		Serial.print("Current temp = ");
-		Serial.println(final);
-		Serial.print(char(194));
-		Serial.println("C");
-	}
-	
   return final;
   
 }
