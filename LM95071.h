@@ -1,9 +1,3 @@
-// Library: SPI Control of a Texas Instruments LM95071 SPI temperature Sensor
-// Version: 0.1
-// Developer: Daniel Melendrez
-// email: dmelendrez(at)gmail(dot)com
-// Category: Sensors
-// Date: Oct 2018
 
 #ifndef LM95071_h
 #define LM95071_h
