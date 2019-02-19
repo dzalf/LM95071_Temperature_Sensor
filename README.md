@@ -1,5 +1,7 @@
 # LM95071 Texas Instruments Temperature Sensor
 
+**WELCOME TO THE ONLY AVAILABLE LIBRARY FOR THE LM95071 TEMPERATURE SENSOR** 
+
 Arduino*/Teensy** Library for reading temperatures from the SPI Temperature Sensor from TI
 
 The Sensor comes in a SOT-23 package and requires three Pins from the uC board (Arduino/Teensy)
