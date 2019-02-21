@@ -72,7 +72,7 @@ float LM95071::celsiusConversion(short val) {
   short dummy, shifted;
 
   dummy = val ^ MASK_XOR;
-  shifted = dummy / 0x04;
+  shifted = dummy / 0x04; // Complement of two operation for retrieving final temp
 
   result = shifted * RESOLUTION;
 
