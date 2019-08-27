@@ -12,10 +12,11 @@ Description: The library uses the SPI library from Arduino (internally called) t
 
 Usage: 
 
-1. Declare a pin from the uC connected to the CS pin of the sensor --> SS_Pin
+1. Declare a pin from the uC connected to the CS pin (Pin 1) of the sensor --> SS_Pin
 2. Instantiate as many devices as you have connected using **LM95071** device(SS_Pin). 
 3. Initialize the library with the **begin()** method --> device.**begin()**;
 4. Query the value using the method **getTemperature()** --> device.**getTemperature()**;  The result from the conversion is saved in a *float* variable.
+5. Connections: Pin 3 (SI/O) of LM95071 is connected to MISO pin, Pin 4 (SC) is connected to SCK from the SPI port.
 
 Notes:
 
