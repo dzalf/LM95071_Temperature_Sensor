@@ -30,6 +30,13 @@ Cheers!  :beer:
 
 dzalf
 
+
+#TODO
+
+1. Method to query manufacturer's ID
+2. Method to set the device into sleep mode
+
+
 * __Tested on Arduino Pro Micro and Leonardo.__ On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this :unamused:) I indeed tried using different pins for the SS signal however it didn't work for unknown reasons. Still investigating this.
 
 * * __Tested on Teeensy 3.2.__ No wiring problems since all pins are available thanks to [Paul's](https://www.pjrc.com/teensy/) great design :sunglasses:
