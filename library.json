@@ -1,7 +1,7 @@
 {
     "name": "LM95071",
-    "description": "Digital Temperature Sensor",
-    "keywords": "Digital Temperature Sensor, Texas Instruments",
+    "description": "Digital Temperature Sensor with SPI interface from Texas Instruments",
+    "keywords": "Digital, Temperature Sensor, SPI, Texas Instruments",
     "authors": [   
         {
             "name": "Daniel Melendrez",
