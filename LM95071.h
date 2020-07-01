@@ -1,5 +1,5 @@
 /*Library: SPI Control of a Texas Instruments LM95071 SPI temperature Sensor
- Version: 0.1
+ Version: 1.1.0
  Developer: Daniel Melendrez
  email: dmelendrez(at)gmail(dot)com
  Category: Sensors
