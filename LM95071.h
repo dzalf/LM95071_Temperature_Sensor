@@ -3,7 +3,8 @@
  Developer: Daniel Melendrez
  email: dmelendrez(at)gmail(dot)com
  Category: Sensors
- Date: Oct 2018
+ Date: Oct 2018 - 0.1.5 Initial release
+       July 2020 - 1.1.0 General tidy up, more comments added
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
