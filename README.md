@@ -38,7 +38,7 @@ dzalf
 3. Test fast SPI [lib](https://github.com/xxxajk/spi4teensy3) on these devices 
 
 
-* __Tested on Arduino Pro Micro and Leonardo.__ On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this :unamused:) I indeed tried using different pins for the SS signal however it didn't work for unknown reasons. Still investigating this.
+* __Tested on Arduino Pro Micro and Leonardo.__ ~~On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this :unamused:) I indeed tried using different pins for the SS signal however it didn't work for unknown reasons. Still investigating this.~~ After recent further testing this issue has been resolved. Possibly the latest version of the Arduino IDE made the compiler/linker solve this issue. Sucessfully tested with other pins
 
 * * __Tested on Teeensy 3.2.__ No wiring problems since all pins are available thanks to [Paul's](https://www.pjrc.com/teensy/) great design :sunglasses:
 
