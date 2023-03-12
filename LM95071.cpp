@@ -1,8 +1,6 @@
 #include "LM95071.h"
 
 
-
-
 // Constructor
 
 LM95071::LM95071(uint8_t pin, boolean debug) {
@@ -27,7 +25,9 @@ float LM95071::getTemperature(void) {
   return final;
 
 }
+
 short LM95071::readTemp(int bytesToRead) {
+
   byte inByte = 0;
   short result;
 
@@ -42,6 +42,7 @@ short LM95071::readTemp(int bytesToRead) {
     Serial.print("1st byte = ");
     Serial.println(result, HEX);
   }
+
   if (bytesToRead > 0) {
 
     result = result << 8;
@@ -49,13 +50,16 @@ short LM95071::readTemp(int bytesToRead) {
     inByte = SPI.transfer(CONTINUOUS_CONV);
 
     result = result | inByte;
+    
     if (_debug) {
       Serial.print("2nd byte = ");
       Serial.println(inByte, HEX);
     }
+
     bytesToRead--;
 
   }
+
   SPI.endTransaction();
 
   digitalWrite(_SelDev_Pin, HIGH);
@@ -88,4 +92,47 @@ float LM95071::celsiusConversion(short val) {
   return result;
 
 
+}
+
+short LM95071::readID(){
+	
+  byte inByte = 0;
+  short ID;
+
+  SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE1));
+
+  digitalWrite(_SelDev_Pin, LOW);
+  result = SPI.transfer(SHUTDOWN_MODE);
+  bytesToRead--;
+
+
+  if (_debug) {
+    Serial.print("1st byte = ");
+    Serial.println(result, HEX);
+  }
+
+  if (bytesToRead > 0) {
+
+    ID = ID << 8;
+
+    inByte = SPI.transfer(SHUTDOWN_MODE);
+
+    ID = ID | inByte;
+    
+    if (_debug) {
+      Serial.print("2nd byte = ");
+      Serial.println(inByte, HEX);
+    }
+
+    bytesToRead--;
+
+  }
+
+  SPI.endTransaction();
+
+  digitalWrite(_SelDev_Pin, HIGH);
+
+  return ID;
+	
+	
 }
