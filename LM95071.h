@@ -31,6 +31,7 @@
 #define MASK_XOR 0x03;
 #define RESOLUTION 0.03125
 #define CONTINUOUS_CONV 0x00
+#define SHUTDOWN_MODE 0xFF
 #define SHUT_DOWN 0xFF
 #define BYTES_TO_READ 2
 #define DEBUG_ON true
@@ -50,6 +51,7 @@ class LM95071 {
 
     void begin(void);
     float getTemperature(void);
+	short readID(void);
 
   private: //these are internal access functions and variables
     
