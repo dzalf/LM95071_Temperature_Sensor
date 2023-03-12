@@ -1,5 +1,14 @@
-#include "LM95071.h"
+/*Library: SPI Control of a Texas Instruments LM95071 SPI temperature Sensor
+ Version: 1.1.0
+ Developer: Daniel Melendrez
+ email: dmelendrez(at)gmail(dot)com
+ Category: Sensors
+ Date: Oct 2018 - 0.1.5 Initial release
+       July 2020 - 1.1.0 General tidy up, more comments added
+       March 2023 = 1.2.0 Added more exmaples. Cleaned up comments
+*/
 
+#include "LM95071.h"
 
 // Constructor
 
@@ -11,9 +20,11 @@ LM95071::LM95071(uint8_t pin, boolean debug) {
 }
 
 void LM95071::begin(void) {
+	
   SPI.begin();
   pinMode(_SelDev_Pin, OUTPUT);
   digitalWrite(_SelDev_Pin, HIGH);
+  
 }
 
 float LM95071::getTemperature(void) {
@@ -21,9 +32,16 @@ float LM95071::getTemperature(void) {
   float final;
   _tempHex = readTemp(BYTES_TO_READ);
   final = celsiusConversion(_tempHex);
-
+	
+	if (_debug) {
+		Serial.print("Current temp = ");
+		Serial.println(final);
+		Serial.print(char(194));
+		Serial.println("C");
+	}
+	
   return final;
-
+  
 }
 
 short LM95071::readTemp(int bytesToRead) {
@@ -37,10 +55,11 @@ short LM95071::readTemp(int bytesToRead) {
   result = SPI.transfer(CONTINUOUS_CONV);
   bytesToRead--;
 
-
   if (_debug) {
+	  
     Serial.print("1st byte = ");
     Serial.println(result, HEX);
+	
   }
 
   if (bytesToRead > 0) {
@@ -69,15 +88,16 @@ short LM95071::readTemp(int bytesToRead) {
 
 float LM95071::celsiusConversion(short val) {
 
-  float result = 0;
+  float result = 0.0;
   short dummy, shifted;
 
   dummy = val ^ MASK_XOR;
-  shifted = dummy / 0x04;
+  shifted = dummy / 0x04; // Complement of two operation for retrieving final temp
 
   result = shifted * RESOLUTION;
 
   if (_debug) {
+	  
     Serial.print("Hex value = ");
     Serial.print(_tempHex, HEX);
     Serial.print(" ;");
@@ -90,8 +110,6 @@ float LM95071::celsiusConversion(short val) {
   }
 
   return result;
-
-
 }
 
 short LM95071::readID(){
