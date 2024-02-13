@@ -8,7 +8,7 @@ The Sensor comes in a SOT-23 package and requires three Pins from the uC board (
 
 Datasheet: http://www.ti.com/lit/ds/symlink/lm95071.pdf
 
-Description: The library uses the SPI library from Arduino (internally called) to comunicate with the sensor via two pins of the SPI port (CLK and data) of the uC. A third cable is necessary as a *Chip Select* pin (Active low) and therefore cascading devices is possible.
+Description: The library uses the SPI library from Arduino (internally called) to communicate with the sensor via two pins of the SPI port (CLK and data) of the uC. A third cable is necessary as a *Chip Select* pin (Active low) and therefore cascading devices are possible.
 
 Usage: 
 
@@ -38,10 +38,15 @@ dzalf
 3. Test fast SPI [lib](https://github.com/xxxajk/spi4teensy3) on these devices 
 
 
-* __Tested on Arduino Pro Micro and Leonardo.__ ~~On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this :unamused:) I indeed tried using different pins for the SS signal however it didn't work for unknown reasons. Still investigating this.~~ After recent further testing this issue has been resolved. Possibly the latest version of the Arduino IDE made the compiler/linker solve this issue. Sucessfully tested with other pins
+* __Tested on Arduino Pro Micro and Leonardo.__ ~~On these boards Pin 17 corresponds to the SS port from the SPI and it is connected to the Rx data from the serial port. Therefore, you must remove the resistor and connect this pin to pin 1 from the sensor. (I have no idea why they decided to wire the SPI like this :unamused:) I indeed tried using different pins for the SS signal however it didn't work for unknown reasons. Still investigating this.~~ After recent further testing this issue has been resolved. Possibly the latest version of the Arduino IDE made the compiler/linker solve this issue. Successfully tested with other pins
 
 * * __Tested on Teeensy 3.2.__ No wiring problems since all pins are available thanks to [Paul's](https://www.pjrc.com/teensy/) great design :sunglasses:
 
 
 
-<a href="https://www.tindie.com/stores/ivorycircuits/?ref=offsite_badges&utm_source=sellers_IvoryCircuits&utm_medium=badges&utm_campaign=badge_large"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
+## UPDATE: Feb 2024. 
+
+Unfortunately, the Tindie shop had to be closed. 
+Thank you to all of you who purchased something from it. 
+We appreciate your support.
+P&D
